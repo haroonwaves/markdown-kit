@@ -1,7 +1,8 @@
 {
 	"name": "markdown-kit",
 	"version": "0.0.3",
-	"description": "",
+	"private": true,
+	"description": "Toolkit for building blog systems with markdown.",
 	"main": "index.js",
 	"scripts": {
 		"build": "pnpm -r build",
