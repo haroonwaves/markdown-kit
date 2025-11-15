@@ -45,7 +45,7 @@ importers:
         specifier: ^5.5.0
         version: 5.9.3
 
-  packages/md-parser-kit:
+  packages/markdown-kit-core:
     dependencies:
       gray-matter:
         specifier: ^4.0.3
@@ -58,7 +58,7 @@ importers:
         specifier: ^7.2.0
         version: 7.3.0(typescript@5.9.3)
 
-  packages/md-renderer-react:
+  packages/markdown-kit-react:
     dependencies:
       prismjs:
         specifier: ^1.30.0
