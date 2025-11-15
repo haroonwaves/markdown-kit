@@ -1,0 +1,30 @@
+{
+	"name": "@yourname/markdown-renderer",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup src/index.ts --format cjs,esm --dts",
+		"type-check": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"dependencies": {
+		"react-markdown": "^10.1.0",
+		"remark-gfm": "^4.0.1",
+		"rehype-prism-plus": "^2.0.1",
+		"rehype-raw": "^7.0.0",
+		"prismjs": "^1.30.0"
+	},
+	"devDependencies": {
+		"tsup": "^7.2.0",
+		"typescript": "^5.5.0"
+	}
+}

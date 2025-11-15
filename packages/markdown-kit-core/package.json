@@ -1,0 +1,22 @@
+{
+	"name": "@yourname/blog-files",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup src/index.ts --format cjs,esm --dts",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"gray-matter": "^4.0.3",
+		"reading-time": "^1.5.0"
+	},
+	"devDependencies": {
+		"tsup": "^7.2.0"
+	}
+}
