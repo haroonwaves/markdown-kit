@@ -1,6 +1,6 @@
 {
 	"name": "markdown-kit",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -11,6 +11,7 @@
 		"format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
 		"format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
 		"type-check": "pnpm -r type-check",
+		"version:bump": "pnpm version patch --recursive --no-git-tag-version",
 		"publish:packages": "pnpm -r publish --access public"
 	},
 	"keywords": [],

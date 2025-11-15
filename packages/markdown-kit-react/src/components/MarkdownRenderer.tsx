@@ -1,0 +1,91 @@
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypePrismPlus from 'rehype-prism-plus';
+import rehypeRaw from 'rehype-raw';
+
+import '../prism.css';
+
+export interface MarkdownRendererProps {
+	content: string;
+	className?: string;
+	components?: Record<string, React.ComponentType<any>>;
+}
+
+export function MarkdownRenderer({ content, className = '', components }: MarkdownRendererProps) {
+	const defaultComponents = {
+		h1: ({ ...props }: any) => (
+			<h1 className="text-4xl font-bold mb-4 mt-8 text-gray-800" {...props} />
+		),
+		h2: ({ ...props }: any) => (
+			<h2 className="text-3xl font-bold mb-3 mt-6 text-gray-800" {...props} />
+		),
+		h3: ({ ...props }: any) => (
+			<h3 className="text-2xl font-semibold mb-2 mt-4 text-gray-800" {...props} />
+		),
+		p: ({ ...props }: any) => <p className="mb-4 leading-7 text-gray-600" {...props} />,
+		ul: ({ ...props }: any) => <ul className="mb-4 ml-6 list-disc text-gray-600" {...props} />,
+		ol: ({ ...props }: any) => <ol className="mb-4 ml-6 list-decimal text-gray-600" {...props} />,
+		li: ({ ...props }: any) => <li className="mb-2" {...props} />,
+		code: ({ className: codeClassName, children, ...props }: any) => {
+			const isInline = !codeClassName;
+			return isInline ? (
+				<code className="px-1.5 py-0.5 bg-gray-100 rounded text-sm text-red-600" {...props}>
+					{children}
+				</code>
+			) : (
+				<code className={codeClassName as string} {...props}>
+					{children}
+				</code>
+			);
+		},
+		pre: ({ className: preClassName, children, ...props }: any) => {
+			return (
+				<pre
+					className={`mb-4 rounded-lg overflow-x-auto [&>code]:block [&>code]:p-4 ${
+						preClassName || ''
+					}`}
+					{...props}
+				>
+					{children}
+				</pre>
+			);
+		},
+		blockquote: ({ ...props }: any) => (
+			<blockquote
+				className="border-l-4 border-blue-500 pl-4 italic my-4 text-gray-600"
+				{...props}
+			/>
+		),
+		a: ({ ...props }: any) => (
+			<a className="text-blue-600 hover:text-blue-800 underline" {...props} />
+		),
+		strong: ({ ...props }: any) => <strong className="font-semibold text-gray-800" {...props} />,
+		em: ({ ...props }: any) => <em className="italic" {...props} />,
+		hr: ({ ...props }: any) => <hr className="my-8 border-gray-300" {...props} />,
+		table: ({ ...props }: any) => (
+			<div className="overflow-x-auto my-4">
+				<table className="min-w-full border border-gray-300" {...props} />
+			</div>
+		),
+		thead: ({ ...props }: any) => <thead className="bg-gray-50" {...props} />,
+		th: ({ ...props }: any) => (
+			<th className="px-4 py-2 text-left font-semibold border border-gray-300" {...props} />
+		),
+		td: ({ ...props }: any) => <td className="px-4 py-2 border border-gray-300" {...props} />,
+	};
+
+	const mergedComponents = { ...defaultComponents, ...components };
+
+	return (
+		<div className={`prose prose-slate max-w-none ${className}`}>
+			<ReactMarkdown
+				remarkPlugins={[remarkGfm]}
+				rehypePlugins={[rehypeRaw, rehypePrismPlus]}
+				components={mergedComponents}
+			>
+				{content}
+			</ReactMarkdown>
+		</div>
+	);
+}
