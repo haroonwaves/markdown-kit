@@ -6,13 +6,13 @@ import rehypeRaw from 'rehype-raw';
 
 import '../prism.css';
 
-export interface MarkdownRendererProps {
+export interface BlogRendererProps {
 	content: string;
 	className?: string;
 	components?: Record<string, React.ComponentType<any>>;
 }
 
-export function MarkdownRenderer({ content, className = '', components }: MarkdownRendererProps) {
+export function BlogRenderer({ content, className = '', components }: BlogRendererProps) {
 	const defaultComponents = {
 		h1: ({ ...props }: any) => (
 			<h1 className="text-4xl font-bold mb-4 mt-8 text-gray-800" {...props} />
@@ -22,6 +22,15 @@ export function MarkdownRenderer({ content, className = '', components }: Markdo
 		),
 		h3: ({ ...props }: any) => (
 			<h3 className="text-2xl font-semibold mb-2 mt-4 text-gray-800" {...props} />
+		),
+		h4: ({ ...props }: any) => (
+			<h4 className="text-xl font-semibold mb-2 mt-4 text-gray-800" {...props} />
+		),
+		h5: ({ ...props }: any) => (
+			<h5 className="text-lg font-semibold mb-2 mt-3 text-gray-800" {...props} />
+		),
+		h6: ({ ...props }: any) => (
+			<h6 className="text-base font-semibold mb-2 mt-3 text-gray-800" {...props} />
 		),
 		p: ({ ...props }: any) => <p className="mb-4 leading-7 text-gray-600" {...props} />,
 		ul: ({ ...props }: any) => <ul className="mb-4 ml-6 list-disc text-gray-600" {...props} />,
@@ -62,17 +71,23 @@ export function MarkdownRenderer({ content, className = '', components }: Markdo
 		),
 		strong: ({ ...props }: any) => <strong className="font-semibold text-gray-800" {...props} />,
 		em: ({ ...props }: any) => <em className="italic" {...props} />,
+		del: ({ ...props }: any) => <del className="line-through text-gray-500" {...props} />,
 		hr: ({ ...props }: any) => <hr className="my-8 border-gray-300" {...props} />,
+		br: ({ ...props }: any) => <br {...props} />,
+		img: ({ ...props }: any) => <img className="max-w-full h-auto rounded-lg my-4" {...props} />,
 		table: ({ ...props }: any) => (
 			<div className="overflow-x-auto my-4">
-				<table className="min-w-full border border-gray-300" {...props} />
+				<table className="min-w-full border border-gray-300 rounded" {...props} />
 			</div>
 		),
 		thead: ({ ...props }: any) => <thead className="bg-gray-50" {...props} />,
+		tbody: ({ ...props }: any) => <tbody {...props} />,
+		tr: ({ ...props }: any) => <tr className="border-b border-gray-300" {...props} />,
 		th: ({ ...props }: any) => (
 			<th className="px-4 py-2 text-left font-semibold border border-gray-300" {...props} />
 		),
 		td: ({ ...props }: any) => <td className="px-4 py-2 border border-gray-300" {...props} />,
+		input: ({ ...props }: any) => <input className="mr-2" type="checkbox" disabled {...props} />,
 	};
 
 	const mergedComponents = { ...defaultComponents, ...components };

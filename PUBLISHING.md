@@ -44,7 +44,7 @@ If `@haroonwaves` doesn't exist yet, you have two options:
 2. Publish a package manually to create the scope:
    ```bash
    npm login
-   cd packages/markdown-kit-core
+   cd packages/blog-kit-core
    npm publish --access public
    ```
 3. This creates the `@haroonwaves` scope automatically
@@ -96,7 +96,7 @@ pnpm publish:packages
 Or publish a specific package:
 
 ```bash
-cd packages/markdown-kit-core
+cd packages/blog-kit-core
 pnpm publish --access public
 ```
 
@@ -105,8 +105,8 @@ pnpm publish --access public
 **Important**: Before merging to main, make sure to update the version numbers in the package.json
 files of packages you want to publish:
 
-- `packages/markdown-kit-core/package.json`
-- `packages/markdown-kit-react/package.json`
+- `packages/blog-kit-core/package.json`
+- `packages/blog-kit-react/package.json`
 
 The workflow will publish packages as-is with their current version numbers. If a version already
 exists on npm, the publish will fail.
@@ -125,7 +125,7 @@ exists on npm, the publish will fail.
 If you encounter this error:
 
 ```
-npm error 404 Not Found - PUT https://registry.npmjs.org/@haroonwaves%2fmarkdown-kit-core - Scope not found
+npm error 404 Not Found - PUT https://registry.npmjs.org/@haroonwaves%2fblog-kit-core - Scope not found
 ```
 
 **Solutions:**
@@ -147,7 +147,7 @@ npm error 404 Not Found - PUT https://registry.npmjs.org/@haroonwaves%2fmarkdown
      # npm config set //registry.npmjs.org/:_authToken YOUR_TOKEN_HERE
 
      # Build the package first
-     cd packages/markdown-kit-core
+     cd packages/blog-kit-core
      pnpm build
 
      # Publish to create the scope

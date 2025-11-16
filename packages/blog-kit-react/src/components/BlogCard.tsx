@@ -1,8 +1,8 @@
 import React from 'react';
-import type { BlogMetadata } from '../types';
+import type { BlogMeta } from '../types';
 
 export interface BlogCardProps {
-	blog: BlogMetadata;
+	blog: BlogMeta;
 	basePath?: string; // e.g., '/blog'
 	renderLink?: (href: string, children: React.ReactNode) => React.ReactNode;
 	className?: string;

@@ -1,26 +1,26 @@
-# @haroonwaves/markdown-kit-core
+# @haroonwaves/blog-kit-core
 
 Core utilities for parsing markdown blog files with frontmatter. Extract metadata, calculate reading
 time, and manage blog content in Node.js applications.
 
 > **Looking for React components?** Check out
-> [@haroonwaves/markdown-kit-react](https://www.npmjs.com/package/@haroonwaves/markdown-kit-react)
-> for beautiful blog UI components.
+> [@haroonwaves/blog-kit-react](https://www.npmjs.com/package/@haroonwaves/blog-kit-react) for
+> beautiful blog UI components.
 
 ## Installation
 
 ```bash
-npm install @haroonwaves/markdown-kit-core
+npm install @haroonwaves/blog-kit-core
 # or
-pnpm add @haroonwaves/markdown-kit-core
+pnpm add @haroonwaves/blog-kit-core
 # or
-yarn add @haroonwaves/markdown-kit-core
+yarn add @haroonwaves/blog-kit-core
 ```
 
 ## Quick Start
 
 ```typescript
-import { getAllBlogs, getBlogData } from '@haroonwaves/markdown-kit-core';
+import { getAllBlogs, getBlogData } from '@haroonwaves/blog-kit-core';
 
 const config = {
 	contentDirectory: './content',
@@ -155,12 +155,12 @@ interface BlogKitConfig {
 ## Usage with React
 
 This package works great with
-[@haroonwaves/markdown-kit-react](https://www.npmjs.com/package/@haroonwaves/markdown-kit-react) for
-a complete blog solution:
+[@haroonwaves/blog-kit-react](https://www.npmjs.com/package/@haroonwaves/blog-kit-react) for a
+complete blog solution:
 
 ```typescript
-import { getAllBlogs, getBlogData } from '@haroonwaves/markdown-kit-core';
-import { MarkdownRenderer, BlogList } from '@haroonwaves/markdown-kit-react';
+import { getAllBlogs, getBlogData } from '@haroonwaves/blog-kit-core';
+import { MarkdownRenderer, BlogList } from '@haroonwaves/blog-kit-react';
 
 // In your Next.js API route or server component
 const blogs = getAllBlogs({ contentDirectory: './content' });
@@ -180,5 +180,5 @@ ISC
 
 ## Related Packages
 
-- [@haroonwaves/markdown-kit-react](https://www.npmjs.com/package/@haroonwaves/markdown-kit-react) -
-  React components for rendering blogs
+- [@haroonwaves/blog-kit-react](https://www.npmjs.com/package/@haroonwaves/blog-kit-react) - React
+  components for rendering blogs
