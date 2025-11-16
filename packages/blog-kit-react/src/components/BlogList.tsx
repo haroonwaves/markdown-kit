@@ -1,8 +1,8 @@
 import { BlogCard, BlogCardProps } from './BlogCard';
-import type { BlogMetadata } from '../types';
+import type { BlogMeta } from '../types';
 
 export interface BlogListProps {
-	blogs: BlogMetadata[];
+	blogs: BlogMeta[];
 	basePath?: string;
 	renderLink?: BlogCardProps['renderLink'];
 	className?: string;

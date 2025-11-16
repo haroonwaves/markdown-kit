@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import type { BlogMetadata } from '../types';
+import type { BlogMeta } from '../types';
 
-export function useBlogs(blogs: BlogMetadata[]) {
+export function useBlogs(blogs: BlogMeta[]) {
 	const [filteredBlogs, setFilteredBlogs] = useState(blogs);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

@@ -6,31 +6,31 @@ UIs.
 
 ## Packages
 
-- **[@haroonwaves/markdown-kit-core](./packages/markdown-kit-core)** - Core utilities for parsing
-  markdown blog files with frontmatter
-- **[@haroonwaves/markdown-kit-react](./packages/markdown-kit-react)** - React components and hooks
-  for rendering blogs
+- **[@haroonwaves/blog-kit-core](./packages/blog-kit-core)** - Core utilities for parsing markdown
+  blog files with frontmatter
+- **[@haroonwaves/blog-kit-react](./packages/blog-kit-react)** - React components and hooks for
+  rendering blogs
 
 ## Installation
 
 ### Core Package
 
 ```bash
-npm install @haroonwaves/markdown-kit-core
+npm install @haroonwaves/blog-kit-core
 # or
-pnpm add @haroonwaves/markdown-kit-core
+pnpm add @haroonwaves/blog-kit-core
 # or
-yarn add @haroonwaves/markdown-kit-core
+yarn add @haroonwaves/blog-kit-core
 ```
 
 ### React Package
 
 ```bash
-npm install @haroonwaves/markdown-kit-react
+npm install @haroonwaves/blog-kit-react
 # or
-pnpm add @haroonwaves/markdown-kit-react
+pnpm add @haroonwaves/blog-kit-react
 # or
-yarn add @haroonwaves/markdown-kit-react
+yarn add @haroonwaves/blog-kit-react
 ```
 
 **Note:** The React package requires React 18+ as a peer dependency.
@@ -43,7 +43,7 @@ The core package provides utilities to parse markdown blog files with frontmatte
 reading time.
 
 ```typescript
-import { getAllBlogs, getBlogData } from '@haroonwaves/markdown-kit-core';
+import { getAllBlogs, getBlogData } from '@haroonwaves/blog-kit-core';
 
 const config = {
 	contentDirectory: './content',
@@ -81,7 +81,7 @@ Your markdown content here...
 Render markdown content with syntax highlighting and beautiful styling:
 
 ```tsx
-import { MarkdownRenderer } from '@haroonwaves/markdown-kit-react';
+import { MarkdownRenderer } from '@haroonwaves/blog-kit-react';
 
 function BlogPost({ content }) {
 	return <MarkdownRenderer content={content} />;
@@ -93,7 +93,7 @@ function BlogPost({ content }) {
 Display a single blog post card:
 
 ```tsx
-import { BlogCard } from '@haroonwaves/markdown-kit-react';
+import { BlogCard } from '@haroonwaves/blog-kit-react';
 
 function BlogCardExample({ blog }) {
 	return (
@@ -113,7 +113,7 @@ function BlogCardExample({ blog }) {
 Display a list of blog posts:
 
 ```tsx
-import { BlogList } from '@haroonwaves/markdown-kit-react';
+import { BlogList } from '@haroonwaves/blog-kit-react';
 
 function BlogListExample({ blogs }) {
 	return <BlogList blogs={blogs} basePath="/blog" emptyMessage="No posts found." />;
@@ -125,7 +125,7 @@ function BlogListExample({ blogs }) {
 Filter and search through blog posts:
 
 ```tsx
-import { useBlogs } from '@haroonwaves/markdown-kit-react';
+import { useBlogs } from '@haroonwaves/blog-kit-react';
 
 function BlogSearch({ blogs }) {
 	const {
@@ -166,7 +166,7 @@ function BlogSearch({ blogs }) {
 Show loading placeholders while blogs are loading:
 
 ```tsx
-import { BlogPlaceholder } from '@haroonwaves/markdown-kit-react';
+import { BlogPlaceholder } from '@haroonwaves/blog-kit-react';
 
 function LoadingBlogs() {
 	return <BlogPlaceholder count={3} />;
@@ -179,8 +179,8 @@ Here's a complete example combining everything:
 
 ```tsx
 import { useState, useEffect } from 'react';
-import { getAllBlogs, getBlogData } from '@haroonwaves/markdown-kit-core';
-import { MarkdownRenderer, BlogList, useBlogs } from '@haroonwaves/markdown-kit-react';
+import { getAllBlogs, getBlogData } from '@haroonwaves/blog-kit-core';
+import { MarkdownRenderer, BlogList, useBlogs } from '@haroonwaves/blog-kit-react';
 
 function BlogPage() {
 	const [blogs, setBlogs] = useState([]);

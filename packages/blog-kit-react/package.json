@@ -1,5 +1,5 @@
 {
-	"name": "@haroonwaves/markdown-kit-react",
+	"name": "@haroonwaves/blog-kit-react",
 	"version": "0.0.3",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
