@@ -3,7 +3,7 @@ import type { BlogMeta } from '../types';
 import { Badge } from './Badge';
 
 export interface BlogCardProps {
-	blog: BlogMeta;
+	metadata: BlogMeta;
 	basePath?: string; // e.g., '/blog'
 	renderLink?: (href: string, children: React.ReactNode) => React.ReactNode;
 	className?: string;
@@ -13,7 +13,7 @@ export interface BlogCardProps {
 }
 
 export function BlogCard({
-	blog,
+	metadata,
 	basePath = '/blog',
 	renderLink,
 	className = '',
@@ -21,7 +21,7 @@ export function BlogCard({
 	showReadingTime = true,
 	showDate = true,
 }: BlogCardProps) {
-	const href = `${basePath}/${blog.slug}`;
+	const href = `${basePath}/${metadata.slug}`;
 	const defaultLink = (href: string, children: React.ReactNode) => <a href={href}>{children}</a>;
 	const Link = renderLink || defaultLink;
 
@@ -31,14 +31,14 @@ export function BlogCard({
 		>
 			<div className="flex items-center justify-between mb-3">
 				<div className="flex items-center gap-3">
-					{showCategory && blog.category && <Badge>{blog.category}</Badge>}
+					{showCategory && metadata.category && <Badge>{metadata.category}</Badge>}
 					{(showReadingTime || showDate) && (
 						<div className="flex items-center gap-2 text-sm text-gray-500">
-							{showReadingTime && <span>{blog.readingTime}</span>}
+							{showReadingTime && <span>{metadata.readingTime}</span>}
 							{showReadingTime && showDate && <span>•</span>}
 							{showDate && (
-								<time dateTime={blog.date}>
-									{new Date(blog.date).toLocaleDateString('en-US', {
+								<time dateTime={metadata.date}>
+									{new Date(metadata.date).toLocaleDateString('en-US', {
 										year: 'numeric',
 										month: 'long',
 										day: 'numeric',
@@ -53,11 +53,11 @@ export function BlogCard({
 			{Link(
 				href,
 				<h2 className="font-semibold text-xl text-gray-700 mb-2 hover:underline transition-colors">
-					{blog.title}
+					{metadata.title}
 				</h2>
 			)}
 
-			<p className="text-sm text-gray-500 leading-6 mb-4">{blog.description}</p>
+			<p className="text-sm text-gray-500 leading-6 mb-4">{metadata.description}</p>
 
 			{Link(
 				href,
