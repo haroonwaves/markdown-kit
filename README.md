@@ -61,14 +61,14 @@ import { BlogList } from '@haroonwaves/blog-kit-react';
 import Link from 'next/link';
 
 export default function BlogPage() {
-	const blogs = getAllBlogsMeta({
+	const blogsMeta = getAllBlogsMeta({
 		contentDirectory: process.cwd(),
 		blogSubdirectory: 'content/blog',
 	});
 
 	return (
 		<BlogList
-			blogs={blogs}
+			metadata={blogsMeta}
 			basePath="/blog"
 			renderLink={(href, children) => <Link href={href}>{children}</Link>}
 		/>
@@ -242,14 +242,14 @@ Display a list of blog posts:
 ```tsx
 import { BlogList } from '@haroonwaves/blog-kit-react';
 
-function BlogListExample({ blogs }) {
-	return <BlogList blogs={blogs} basePath="/blog" emptyMessage="No posts found." />;
+function BlogListExample({ blogsMeta }) {
+	return <BlogList metadata={blogsMeta} basePath="/blog" emptyMessage="No posts found." />;
 }
 ```
 
 **Props:**
 
-- `blogs` (BlogMeta[], required): Array of blog metadata
+- `metadata` (BlogMeta[], required): Array of blog metadata
 - `basePath` (string, optional): Base path for blog links (default: '/blog')
 - `renderLink` (function, optional): Custom link renderer
 - `className` (string, optional): Additional CSS classes
@@ -280,15 +280,9 @@ Filter and search through blog posts:
 ```tsx
 import { useBlogs } from '@haroonwaves/blog-kit-react';
 
-function BlogSearch({ blogs }) {
-	const {
-		blogs: filteredBlogs,
-		searchTerm,
-		setSearchTerm,
-		selectedCategory,
-		setSelectedCategory,
-		categories,
-	} = useBlogs(blogs);
+function BlogSearch({ blogsMeta }) {
+	const { metadata, searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, categories } =
+		useBlogs(blogsMeta);
 
 	return (
 		<div>
@@ -308,7 +302,7 @@ function BlogSearch({ blogs }) {
 					</option>
 				))}
 			</select>
-			<BlogList blogs={filteredBlogs} />
+			<BlogList metadata={metadata} />
 		</div>
 	);
 }
@@ -316,7 +310,7 @@ function BlogSearch({ blogs }) {
 
 **Returns:**
 
-- `blogs` (BlogMeta[]): Filtered blog posts
+- `metadata` (BlogMeta[]): Filtered blog posts metadata
 - `searchTerm` (string): Current search term
 - `setSearchTerm` (function): Update search term
 - `selectedCategory` (string | null): Selected category filter
@@ -354,7 +348,7 @@ import { BlogList } from '@haroonwaves/blog-kit-react';
 import Link from 'next/link';
 
 export default function BlogListPage() {
-	const blogs = getAllBlogsMeta({
+	const blogsMeta = getAllBlogsMeta({
 		contentDirectory: process.cwd(),
 		blogSubdirectory: 'content/blog',
 	});
@@ -364,7 +358,7 @@ export default function BlogListPage() {
 			<div className="max-w-7xl mx-auto px-4 py-12">
 				<h1 className="text-4xl font-bold mb-4">Blogs</h1>
 				<BlogList
-					blogs={blogs}
+					metadata={blogsMeta}
 					basePath="/blog"
 					renderLink={(href, children) => <Link href={href}>{children}</Link>}
 				/>
@@ -512,11 +506,11 @@ async function fetchAllBlogs(): Promise<BlogMeta[]> {
 }
 
 function BlogPage() {
-	const [blogs, setBlogs] = useState<BlogMeta[]>([]);
-	const { blogs: filteredBlogs, searchTerm, setSearchTerm } = useBlogs(blogs);
+	const [blogsMeta, setBlogsMeta] = useState<BlogMeta[]>([]);
+	const { metadata, searchTerm, setSearchTerm } = useBlogs(blogs);
 
 	useEffect(() => {
-		fetchAllBlogs().then(setBlogs);
+		fetchAllBlogs().then(setBlogsMeta);
 	}, []);
 
 	return (
@@ -526,7 +520,7 @@ function BlogPage() {
 				onChange={(e) => setSearchTerm(e.target.value)}
 				placeholder="Search..."
 			/>
-			<BlogList blogs={filteredBlogs} basePath="/blog" />
+			<BlogList metadata={metadata} basePath="/blog" />
 		</div>
 	);
 }
