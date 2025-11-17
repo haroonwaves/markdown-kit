@@ -2,8 +2,8 @@
 export type * from './types';
 
 // Components
-export { BlogRenderer as MarkdownRenderer } from './components/MarkdownRenderer';
-export type { BlogRendererProps as MarkdownRendererProps } from './components/MarkdownRenderer';
+export { BlogRenderer } from './components/BlogRenderer';
+export type { BlogRendererProps } from './components/BlogRenderer';
 
 export { BlogCard } from './components/BlogCard';
 export type { BlogCardProps } from './components/BlogCard';
