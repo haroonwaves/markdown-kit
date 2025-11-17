@@ -2,7 +2,7 @@ import { BlogCard, BlogCardProps } from './BlogCard';
 import type { BlogMeta } from '../types';
 
 export interface BlogListProps {
-	blogs: BlogMeta[];
+	metadata: BlogMeta[];
 	basePath?: string;
 	renderLink?: BlogCardProps['renderLink'];
 	className?: string;
@@ -11,23 +11,23 @@ export interface BlogListProps {
 }
 
 export function BlogList({
-	blogs,
+	metadata,
 	basePath = '/blog',
 	renderLink,
 	className = '',
 	emptyMessage = 'No blog posts found.',
 	cardProps,
 }: BlogListProps) {
-	if (blogs.length === 0) {
+	if (metadata.length === 0) {
 		return <div className={`text-center text-gray-500 py-12 ${className}`}>{emptyMessage}</div>;
 	}
 
 	return (
 		<div className={`space-y-6 ${className}`}>
-			{blogs.map((blog) => (
+			{metadata.map((meta) => (
 				<BlogCard
-					key={blog.slug}
-					blog={blog}
+					key={meta.slug}
+					metadata={meta}
 					basePath={basePath}
 					renderLink={renderLink}
 					{...cardProps}

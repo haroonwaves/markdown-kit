@@ -10,7 +10,6 @@ export interface BlogMeta {
 export interface Blog {
 	metadata: BlogMeta;
 	content: string;
-	readingTime: string;
 }
 
 export interface BlogConfig {

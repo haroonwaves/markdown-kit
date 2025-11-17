@@ -19,7 +19,7 @@ export function extractBlogMeta(content: string, slug: string): BlogMeta {
 
 	return {
 		slug,
-		...(data as Omit<BlogMeta, 'slug' | 'readingTime'>),
+		...data,
 		readingTime: readingTimeText,
 	} as BlogMeta;
 }
@@ -44,7 +44,6 @@ export function extractBlog(content: string, slug: string): Blog {
 			readingTime: readingTimeText,
 		},
 		content: markdownContent,
-		readingTime: readingTimeText,
 	};
 }
 
@@ -115,8 +114,8 @@ export function getBlog(slug: string, config: BlogConfig): Blog | null {
 		metadata: {
 			...(data as Omit<BlogMeta, 'slug'>),
 			slug,
+			readingTime: readingTimeText,
 		},
 		content,
-		readingTime: readingTimeText,
 	};
 }
