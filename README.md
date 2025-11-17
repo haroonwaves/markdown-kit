@@ -712,16 +712,16 @@ interface BlogConfig {
 
 ## Styling
 
-The React components use Tailwind CSS classes. Make sure you have
-[Tailwind CSS](https://tailwindcss.com/) configured in your project.
-
-The package also includes Prism.js CSS for syntax highlighting. Import it in your app:
+The package also includes Prism.js CSS for syntax highlighting and Tailwind CSS for component
+styling. Import it in your app:
 
 ```tsx
 import '@haroonwaves/blog-kit-react/dist/index.css';
+import '@haroonwaves/blog-kit-react/dist/styles.css';
 ```
 
-Or if you're using a bundler that supports CSS imports, it will be included automatically.
+Or if you're using a bundler that supports CSS imports (Ex: Vite), it will be included
+automatically.
 
 ## Development
 
