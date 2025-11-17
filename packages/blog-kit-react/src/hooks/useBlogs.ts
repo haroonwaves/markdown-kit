@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import type { BlogMeta } from '../types';
 
-export function useBlogs(blogs: BlogMeta[]) {
-	const [filteredBlogs, setFilteredBlogs] = useState(blogs);
+export function useBlogs(blogsMeta: BlogMeta[]) {
+	const [filteredBlogs, setFilteredBlogs] = useState(blogsMeta);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
 	useEffect(() => {
-		let filtered = blogs;
+		let filtered = blogsMeta;
 
 		if (searchTerm) {
 			filtered = filtered.filter(
@@ -22,14 +22,14 @@ export function useBlogs(blogs: BlogMeta[]) {
 		}
 
 		setFilteredBlogs(filtered);
-	}, [blogs, searchTerm, selectedCategory]);
+	}, [blogsMeta, searchTerm, selectedCategory]);
 
 	const categories = Array.from(
-		new Set(blogs.map((blog) => blog.category).filter(Boolean))
+		new Set(blogsMeta.map((blog) => blog.category).filter(Boolean))
 	) as string[];
 
 	return {
-		blogs: filteredBlogs,
+		metadata: filteredBlogs,
 		searchTerm,
 		setSearchTerm,
 		selectedCategory,
