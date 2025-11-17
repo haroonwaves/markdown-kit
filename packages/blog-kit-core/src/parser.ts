@@ -5,17 +5,17 @@ import readingTime from 'reading-time';
 import type { BlogMeta, Blog, BlogConfig } from './types';
 
 /**
- * Client-side compatible: Extract blog metadata from raw markdown content.
+ * Client-side compatible: Extract blog metadata from raw blog content.
  * This function works in browser environments (pure React) where you have
- * the markdown content as a string (e.g., fetched from an API or imported).
+ * the blog content as a string (e.g., fetched from an API or imported).
  *
- * @param content - Raw markdown content string
+ * @param content - Raw blog content string
  * @param slug - Blog post slug/identifier
  * @returns Parsed blog metadata
  */
 export function extractBlogMeta(content: string, slug: string): BlogMeta {
-	const { data, content: markdownContent } = matter(content);
-	const readingTimeText = readingTime(markdownContent).text;
+	const { data, content: BlogContent } = matter(content);
+	const readingTimeText = readingTime(BlogContent).text;
 
 	return {
 		slug,
@@ -25,17 +25,17 @@ export function extractBlogMeta(content: string, slug: string): BlogMeta {
 }
 
 /**
- * Client-side compatible: Extract blog data from raw markdown content.
+ * Client-side compatible: Extract blog data from raw blog content.
  * This function works in browser environments (pure React) where you have
- * the markdown content as a string (e.g., fetched from an API or imported).
+ * the blog content as a string (e.g., fetched from an API or imported).
  *
- * @param content - Raw markdown content string
+ * @param content - Raw Blog content string
  * @param slug - Blog post slug/identifier
  * @returns Parsed blog data with metadata and content
  */
 export function extractBlog(content: string, slug: string): Blog {
-	const { data, content: markdownContent } = matter(content);
-	const readingTimeText = readingTime(markdownContent).text;
+	const { data, content: BlogContent } = matter(content);
+	const readingTimeText = readingTime(BlogContent).text;
 
 	return {
 		metadata: {
@@ -43,7 +43,7 @@ export function extractBlog(content: string, slug: string): Blog {
 			slug,
 			readingTime: readingTimeText,
 		},
-		content: markdownContent,
+		content: BlogContent,
 	};
 }
 

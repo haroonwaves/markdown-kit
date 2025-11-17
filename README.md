@@ -79,7 +79,7 @@ export default function BlogPage() {
 ```tsx
 // app/blog/[slug]/page.tsx
 import { getAllBlogsMeta, getBlog } from '@haroonwaves/blog-kit-core';
-import { MarkdownRenderer } from '@haroonwaves/blog-kit-react';
+import { BlogRenderer } from '@haroonwaves/blog-kit-react';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -101,7 +101,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 	return (
 		<article>
 			<h1>{blog.metadata.title}</h1>
-			<MarkdownRenderer content={blog.content} />
+			<BlogRenderer content={blog.content} metadata={blog.metadata} />
 		</article>
 	);
 }
@@ -186,21 +186,22 @@ length.
 The React package provides beautiful, customizable components for rendering blogs in your React
 applications.
 
-### MarkdownRenderer
+### BlogRenderer
 
 Render markdown content with syntax highlighting and beautiful styling:
 
 ```tsx
-import { MarkdownRenderer } from '@haroonwaves/blog-kit-react';
+import { BlogRenderer } from '@haroonwaves/blog-kit-react';
 
 function BlogPost({ content }) {
-	return <MarkdownRenderer content={content} />;
+	return <BlogRenderer content={content} />;
 }
 ```
 
 **Props:**
 
-- `content` (string, required): Markdown content to render
+- `content` (string, required): Blog content to render
+- `metadata` (BlogMeta, required): Blog meta info to render
 - `className` (string, optional): Additional CSS classes
 - `components` (object, optional): Custom component overrides
 
@@ -377,7 +378,7 @@ export default function BlogListPage() {
 
 ```tsx
 import { getAllBlogsMeta, getBlog } from '@haroonwaves/blog-kit-core';
-import { MarkdownRenderer } from '@haroonwaves/blog-kit-react';
+import { BlogRenderer } from '@haroonwaves/blog-kit-react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -448,7 +449,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 						<span>•</span>
 						<time dateTime={metadata.date}>{new Date(metadata.date).toLocaleDateString()}</time>
 					</div>
-					<MarkdownRenderer content={content} />
+					<BlogRenderer content={content} />
 				</article>
 			</div>
 		</div>
@@ -463,7 +464,7 @@ For server-side rendering, use the same functions but without `generateStaticPar
 ```tsx
 // app/blog/[slug]/page.tsx
 import { getBlog } from '@haroonwaves/blog-kit-core';
-import { MarkdownRenderer } from '@haroonwaves/blog-kit-react';
+import { BlogRenderer } from '@haroonwaves/blog-kit-react';
 import { notFound } from 'next/navigation';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -477,7 +478,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 	return (
 		<article>
 			<h1>{blog.metadata.title}</h1>
-			<MarkdownRenderer content={blog.content} />
+			<BlogRenderer content={blog.content} />
 		</article>
 	);
 }
@@ -493,7 +494,7 @@ markdown content fetched from an API or imported:
 ```tsx
 import { useState, useEffect } from 'react';
 import { extractBlogMeta, extractBlog, type BlogMeta, type Blog } from '@haroonwaves/blog-kit-core';
-import { MarkdownRenderer, BlogList, useBlogs } from '@haroonwaves/blog-kit-react';
+import { BlogRenderer, BlogList, useBlogs } from '@haroonwaves/blog-kit-react';
 
 // Example: Fetch markdown content from an API
 async function fetchBlogContent(slug: string): Promise<string> {
@@ -549,7 +550,7 @@ function BlogPostPage({ slug }: { slug: string }) {
 		<article>
 			<h1>{blog.metadata.title}</h1>
 			<p>{blog.metadata.description}</p>
-			<MarkdownRenderer content={blog.content} />
+			<BlogRenderer content={blog.content} metadata={blog.metadata} />
 		</article>
 	);
 }
@@ -607,7 +608,7 @@ const blog = getBlog('my-blog-post', {
 
 if (blog) {
 	console.log(blog.metadata.title);
-	console.log(blog.content); // markdown content
+	console.log(blog.content); // blog markdown content
 	console.log(blog.readingTime);
 }
 ```
@@ -655,7 +656,7 @@ console.log(blog.content); // markdown content
 
 #### Components
 
-- `MarkdownRenderer` - Renders markdown content with syntax highlighting
+- `BlogRenderer` - Renders markdown content with syntax highlighting
 - `BlogCard` - Single blog post card component
 - `BlogList` - List of blog cards
 - `BlogPlaceholder` - Loading placeholder component
