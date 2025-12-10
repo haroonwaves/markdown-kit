@@ -19,7 +19,11 @@ export function BlogList({
 	cardProps,
 }: BlogListProps) {
 	if (metadata.length === 0) {
-		return <div className={`text-center text-gray-500 dark:text-gray-400 py-12 ${className}`}>{emptyMessage}</div>;
+		return (
+			<div className={`text-center text-gray-500 dark:text-gray-400 py-12 ${className}`}>
+				{emptyMessage}
+			</div>
+		);
 	}
 
 	return (
