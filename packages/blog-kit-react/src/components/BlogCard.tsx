@@ -57,7 +57,9 @@ export function BlogCard({
 				</h2>
 			)}
 
-			<p className="text-sm text-gray-500 dark:text-gray-300 leading-6 mb-4">{metadata.description}</p>
+			<p className="text-sm text-gray-500 dark:text-gray-300 leading-6 mb-4">
+				{metadata.description}
+			</p>
 
 			{Link(
 				href,
