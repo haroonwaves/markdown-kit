@@ -18,31 +18,31 @@ export interface BlogRendererProps {
 export function BlogRenderer({ content, metadata, className = '', components }: BlogRendererProps) {
 	const defaultComponents = {
 		h1: ({ ...props }: any) => (
-			<h1 className="text-4xl font-bold mb-4 mt-8 text-gray-800" {...props} />
+			<h1 className="text-4xl font-bold mb-4 mt-8 text-gray-800 dark:text-gray-100" {...props} />
 		),
 		h2: ({ ...props }: any) => (
-			<h2 className="text-3xl font-bold mb-3 mt-6 text-gray-800" {...props} />
+			<h2 className="text-3xl font-bold mb-3 mt-6 text-gray-800 dark:text-gray-100" {...props} />
 		),
 		h3: ({ ...props }: any) => (
-			<h3 className="text-2xl font-semibold mb-2 mt-4 text-gray-800" {...props} />
+			<h3 className="text-2xl font-semibold mb-2 mt-4 text-gray-800 dark:text-gray-100" {...props} />
 		),
 		h4: ({ ...props }: any) => (
-			<h4 className="text-xl font-semibold mb-2 mt-4 text-gray-800" {...props} />
+			<h4 className="text-xl font-semibold mb-2 mt-4 text-gray-800 dark:text-gray-100" {...props} />
 		),
 		h5: ({ ...props }: any) => (
-			<h5 className="text-lg font-semibold mb-2 mt-3 text-gray-800" {...props} />
+			<h5 className="text-lg font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-100" {...props} />
 		),
 		h6: ({ ...props }: any) => (
-			<h6 className="text-base font-semibold mb-2 mt-3 text-gray-800" {...props} />
+			<h6 className="text-base font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-100" {...props} />
 		),
-		p: ({ ...props }: any) => <p className="mb-4 leading-7 text-gray-600" {...props} />,
-		ul: ({ ...props }: any) => <ul className="mb-4 ml-6 list-disc text-gray-600" {...props} />,
-		ol: ({ ...props }: any) => <ol className="mb-4 ml-6 list-decimal text-gray-600" {...props} />,
+		p: ({ ...props }: any) => <p className="mb-4 leading-7 text-gray-600 dark:text-gray-300" {...props} />,
+		ul: ({ ...props }: any) => <ul className="mb-4 ml-6 list-disc text-gray-600 dark:text-gray-300" {...props} />,
+		ol: ({ ...props }: any) => <ol className="mb-4 ml-6 list-decimal text-gray-600 dark:text-gray-300" {...props} />,
 		li: ({ ...props }: any) => <li className="mb-2" {...props} />,
 		code: ({ className: codeClassName, children, ...props }: any) => {
 			const isInline = !codeClassName;
 			return isInline ? (
-				<code className="px-1.5 py-0.5 bg-gray-100 rounded text-sm text-red-600" {...props}>
+				<code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-sm text-red-600 dark:text-red-400" {...props}>
 					{children}
 				</code>
 			) : (
@@ -65,31 +65,31 @@ export function BlogRenderer({ content, metadata, className = '', components }: 
 		},
 		blockquote: ({ ...props }: any) => (
 			<blockquote
-				className="border-l-4 border-blue-500 pl-4 italic my-4 text-gray-600"
+				className="border-l-4 border-blue-500 dark:border-blue-400 pl-4 italic my-4 text-gray-600 dark:text-gray-400"
 				{...props}
 			/>
 		),
 		a: ({ ...props }: any) => (
-			<a className="text-blue-600 hover:text-blue-800 underline" {...props} />
+			<a className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline" {...props} />
 		),
-		strong: ({ ...props }: any) => <strong className="font-semibold text-gray-800" {...props} />,
+		strong: ({ ...props }: any) => <strong className="font-semibold text-gray-800 dark:text-gray-100" {...props} />,
 		em: ({ ...props }: any) => <em className="italic" {...props} />,
-		del: ({ ...props }: any) => <del className="line-through text-gray-500" {...props} />,
-		hr: ({ ...props }: any) => <hr className="my-8 border-gray-300" {...props} />,
+		del: ({ ...props }: any) => <del className="line-through text-gray-500 dark:text-gray-400" {...props} />,
+		hr: ({ ...props }: any) => <hr className="my-8 border-gray-300 dark:border-gray-700" {...props} />,
 		br: ({ ...props }: any) => <br {...props} />,
 		img: ({ ...props }: any) => <img className="max-w-full h-auto rounded-lg my-4" {...props} />,
 		table: ({ ...props }: any) => (
 			<div className="overflow-x-auto my-4">
-				<table className="min-w-full border border-gray-300 rounded" {...props} />
+				<table className="min-w-full border border-gray-300 dark:border-gray-700 rounded" {...props} />
 			</div>
 		),
-		thead: ({ ...props }: any) => <thead className="bg-gray-50" {...props} />,
+		thead: ({ ...props }: any) => <thead className="bg-gray-50 dark:bg-gray-800" {...props} />,
 		tbody: ({ ...props }: any) => <tbody {...props} />,
-		tr: ({ ...props }: any) => <tr className="border-b border-gray-300" {...props} />,
+		tr: ({ ...props }: any) => <tr className="border-b border-gray-300 dark:border-gray-700" {...props} />,
 		th: ({ ...props }: any) => (
-			<th className="px-4 py-2 text-left font-semibold border border-gray-300" {...props} />
+			<th className="px-4 py-2 text-left font-semibold border border-gray-300 dark:border-gray-700" {...props} />
 		),
-		td: ({ ...props }: any) => <td className="px-4 py-2 border border-gray-300" {...props} />,
+		td: ({ ...props }: any) => <td className="px-4 py-2 border border-gray-300 dark:border-gray-700" {...props} />,
 		input: ({ ...props }: any) => <input className="mr-2" type="checkbox" disabled {...props} />,
 	};
 
@@ -99,7 +99,7 @@ export function BlogRenderer({ content, metadata, className = '', components }: 
 		<>
 			<div className="flex items-center gap-3 mb-4">
 				{metadata.category && <Badge>{metadata.category}</Badge>}
-				<div className="flex items-center gap-2 text-sm text-gray-500">
+				<div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
 					<span>{metadata.readingTime}</span>
 					<span>•</span>
 					<time dateTime={metadata.date}>
@@ -112,7 +112,7 @@ export function BlogRenderer({ content, metadata, className = '', components }: 
 				</div>
 			</div>
 
-			<div className={`prose prose-slate max-w-none ${className}`}>
+			<div className={`prose prose-slate dark:prose-invert max-w-none ${className}`}>
 				<ReactMarkdown
 					remarkPlugins={[remarkGfm]}
 					rehypePlugins={[rehypeRaw, rehypePrismPlus]}
