@@ -721,7 +721,7 @@ styling. Import it in your app:
 
 ```tsx
 import '@haroonwaves/blog-kit-react/dist/index.css'; // For Prism styles
-import '@haroonwaves/blog-kit-react/dist/styles.css'; // For Component styles
+import '@haroonwaves/blog-kit-react/dist/style.css'; // For Component styles
 ```
 
 Or if you're using a bundler that supports CSS imports example Vite - it will be included
