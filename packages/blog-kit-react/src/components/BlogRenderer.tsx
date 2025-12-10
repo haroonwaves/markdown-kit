@@ -89,7 +89,7 @@ export function BlogRenderer({ content, metadata, className = '', components }: 
 		th: ({ ...props }: any) => (
 			<th className="px-4 py-2 text-left font-semibold border border-gray-300 dark:border-gray-700 dark:text-gray-100" {...props} />
 		),
-		td: ({ ...props }: any) => <td className="px-4 py-2 border border-gray-300 dark:border-gray-700" {...props} />,
+		td: ({ ...props }: any) => <td className="px-4 py-2 border border-gray-300 dark:border-gray-700 dark:text-gray-300" {...props} />,
 		input: ({ ...props }: any) => <input className="mr-2" type="checkbox" disabled {...props} />,
 	};
 
