@@ -10,18 +10,6 @@ Blog Kit is a modern, TypeScript-first toolkit designed to simplify building blo
 markdown. Whether you're creating a personal blog, documentation site, or content platform, Blog Kit
 provides the essential tools you need with minimal configuration.
 
-### Why Blog Kit?
-
-Building a blog from scratch means dealing with markdown parsing, frontmatter extraction, reading
-time calculations, syntax highlighting, and responsive UI components. Blog Kit handles all of this
-for you with:
-
-- **Zero Configuration** - Works out of the box with sensible defaults
-- **TypeScript First** - Full type safety and IntelliSense support
-- **Framework Agnostic** - Use with Next.js, Remix, Vite, or any React framework
-- **Production Ready** - Battle-tested components with dark mode support
-- **Developer Friendly** - Simple API, comprehensive docs, and great DX
-
 ### Key Features
 
 #### Core Package
