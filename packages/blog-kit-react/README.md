@@ -18,15 +18,13 @@ yarn add @haroonwaves/blog-kit-react
 ## Documentation
 
 For complete documentation, API reference, and examples, please visit the
-[main documentation](https://github.com/haroonwaves/blog-kit).
+[main documentation](https://blogkit.pages.dev).
 
 ## Quick Links
 
-- [React Package Usage](https://github.com/haroonwaves/blog-kit#react-package)
-- [Components Reference](https://github.com/haroonwaves/blog-kit#react-package)
-- [useBlogs Hook](https://github.com/haroonwaves/blog-kit#useblogs-hook)
-- [Complete Example](https://github.com/haroonwaves/blog-kit#complete-example)
-- [Next.js Integration](https://github.com/haroonwaves/blog-kit#nextjs-integration)
+- [Quick Start](https://blogkit.pages.dev/docs/quick-start)
+- [React Package Usage](https://blogkit.pages.dev/docs/react-package)
+- [API Reference](https://blogkit.pages.dev/docs/api-reference)
 
 ## Related Packages
 

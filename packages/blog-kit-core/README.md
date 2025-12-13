@@ -16,14 +16,13 @@ yarn add @haroonwaves/blog-kit-core
 ## Documentation
 
 For complete documentation, API reference, and examples, please visit the
-[main documentation](https://github.com/haroonwaves/blog-kit).
+[main documentation](https://blogkit.pages.dev).
 
 ## Quick Links
 
-- [Core Package Usage](https://github.com/haroonwaves/blog-kit#core-package)
-- [API Reference](https://github.com/haroonwaves/blog-kit#api-reference)
-- [Blog File Format](https://github.com/haroonwaves/blog-kit#blog-file-format)
-- [Type Definitions](https://github.com/haroonwaves/blog-kit#types)
+- [Quick Start](https://blogkit.pages.dev/docs/quick-start)
+- [Core Package Usage](https://blogkit.pages.dev/docs/core-package)
+- [API Reference](https://blogkit.pages.dev/docs/api-reference)
 
 ## Related Packages
 

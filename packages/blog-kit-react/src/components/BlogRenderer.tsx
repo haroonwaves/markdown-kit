@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeRaw from 'rehype-raw';
-import { BlogMeta } from '../types';
+import type { BlogMeta } from '../types';
 
 import '../prism.css';
 import { Badge } from './Badge';
@@ -18,14 +18,20 @@ export interface BlogRendererProps {
 export function BlogRenderer({ content, metadata, className = '', components }: BlogRendererProps) {
 	const defaultComponents = {
 		h1: ({ ...props }: any) => (
-			<h1 className="text-4xl font-bold mb-4 mt-8 text-gray-800 dark:text-gray-100" {...props} />
+			<h1
+				className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 mt-8 text-gray-800 dark:text-gray-100"
+				{...props}
+			/>
 		),
 		h2: ({ ...props }: any) => (
-			<h2 className="text-3xl font-bold mb-3 mt-6 text-gray-800 dark:text-gray-100" {...props} />
+			<h2
+				className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 mt-6 text-gray-800 dark:text-gray-100"
+				{...props}
+			/>
 		),
 		h3: ({ ...props }: any) => (
 			<h3
-				className="text-2xl font-semibold mb-2 mt-4 text-gray-800 dark:text-gray-100"
+				className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 mt-4 text-gray-800 dark:text-gray-100"
 				{...props}
 			/>
 		),
