@@ -49,7 +49,7 @@ Fork the Project
 All commits MUST follow this format:
 
 ```
-<gitmoji> type: subject
+<gitmoji> type(scope): subject
 
 [optional body]
 ```
@@ -57,9 +57,9 @@ All commits MUST follow this format:
 ### Examples
 
 ```bash
-✨ feat: add dark-mode support
-🐛 fix: resolve markdown parsing issue
-📝 docs: update react component library documentation
+✨ feat(react): add dark-mode support
+🐛 fix(core): resolve markdown parsing issue
+📝 docs(app): update react component library documentation
 ```
 
 ## Development Workflow
