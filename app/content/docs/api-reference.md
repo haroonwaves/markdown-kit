@@ -1,6 +1,6 @@
 ---
-title: API Reference
-description: Complete API reference for Blog Kit
+title: Blog Kit API Reference
+description: Complete API reference for Blog Kit's core package and React components.
 date: 2024-01-06
 ---
 

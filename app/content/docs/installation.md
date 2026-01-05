@@ -1,6 +1,6 @@
 ---
-title: Installation
-description: How to install Blog Kit packages
+title: Blog Kit Installation
+description: How to install Blog Kit packages using node package manager.
 date: 2024-01-02
 ---
 

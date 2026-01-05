@@ -1,6 +1,6 @@
 ---
-title: Core Package
-description: Core utilities for parsing markdown blog files
+title: Blog Kit Core Package
+description: Blog Kit's Core utilities for parsing markdown blog files and calculating reading time.
 date: 2024-01-04
 ---
 
