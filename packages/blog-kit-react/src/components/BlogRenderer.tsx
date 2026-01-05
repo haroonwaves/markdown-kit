@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeRaw from 'rehype-raw';
+import rehypeSlugCustomId from 'rehype-slug-custom-id';
 import type { BlogMeta } from '../types';
 
 import '../prism.css';
@@ -209,7 +210,7 @@ export function BlogRenderer({
 			<div className={`prose prose-slate dark:prose-invert max-w-none ${className}`}>
 				<ReactMarkdown
 					remarkPlugins={[remarkGfm]}
-					rehypePlugins={[rehypeRaw, rehypePrismPlus]}
+					rehypePlugins={[rehypeRaw, rehypePrismPlus, rehypeSlugCustomId]}
 					components={mergedComponents}
 				>
 					{content}

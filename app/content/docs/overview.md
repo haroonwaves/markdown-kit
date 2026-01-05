@@ -25,9 +25,15 @@ provides the essential tools you need with minimal configuration.
 
 #### React Package
 
-- ✅ Beautiful, customizable markdown rendering
-- ✅ Syntax highlighting for code blocks (Prism.js)
-- ✅ GitHub Flavored Markdown (GFM) support
+- ✅ Beautiful, customizable markdown rendering (using
+  [react-markdown](https://github.com/remarkjs/react-markdown))
+- ✅ Syntax highlighting for code blocks (using
+  [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus))
+- ✅ GitHub Flavored Markdown (GFM) support (using
+  [remark-gfm](https://github.com/remarkjs/remark-gfm))
+- ✅ Raw HTML rendering support (using [rehype-raw](https://github.com/rehypejs/rehype-raw))
+- ✅ Automatic heading IDs for anchor links (using
+  [rehype-slug-custom-id](https://github.com/valeriangalliat/rehype-slug-custom-id))
 - ✅ Responsive blog card components
 - ✅ Search and filter functionality via `useBlogs` hook
 - ✅ Loading placeholders
