@@ -1,3 +1,9 @@
+---
+title: Dark Mode Setup
+description: Learn how to configure dark mode support for Blog Kit components in your Next.js or React application with step-by-step setup instructions.
+date: 2024-01-04
+---
+
 ## Dark Mode Setup
 
 Learn how to configure dark mode support for Blog Kit components in your application. This guide

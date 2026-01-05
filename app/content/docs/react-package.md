@@ -1,6 +1,6 @@
 ---
-title: React Package
-description: React components and hooks for rendering blogs
+title: Blog Kit React Package
+description: Blog Kit's React components and hooks for rendering blogs and documentation sites.
 date: 2024-01-05
 ---
 

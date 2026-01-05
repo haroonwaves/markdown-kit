@@ -18,9 +18,85 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Blog Kit - Powerful Toolkit for Building Blog Systems',
+	metadataBase: new URL('https://blog-kit.haroonwaves.com'),
+	title: {
+		default: 'Blog Kit - Build Your Own Blog with Markdown & TypeScript',
+		template: '%s | Blog Kit',
+	},
 	description:
-		'A powerful toolkit for building blog systems with markdown. Includes core utilities for parsing markdown and React components for rendering beautiful blogs.',
+		'Create your own blog in minutes with Blog Kit. A toolkit for building beautiful markdown-based blogs and documentation sites. ',
+	keywords: [
+		'build a blog',
+		'create blog',
+		'markdown blog',
+		'blog builder',
+		'blog framework',
+		'static blog generator',
+		'TypeScript blog',
+		'React blog',
+		'Next.js blog',
+		'blog toolkit',
+		'personal blog',
+		'developer blog',
+		'markdown to blog',
+		'blog CMS',
+		'headless blog',
+		'blog engine',
+		'documentation site',
+		'static site generator',
+		'blog platform',
+		'open source blog',
+	],
+	authors: [{ name: 'Haroon', url: 'https://github.com/haroonwaves' }],
+	creator: 'Haroon',
+	publisher: 'Blog Kit',
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	openGraph: {
+		type: 'website',
+		locale: 'en_US',
+		url: 'https://blog-kit.haroonwaves.com',
+		title: 'Blog Kit - Build Your Own Blog with Markdown & TypeScript',
+		description:
+			'Create your own blog in minutes. A modern toolkit for building beautiful markdown-based blogs with zero configuration. Perfect for developers, writers, and content creators.',
+		siteName: 'Blog Kit',
+		images: [
+			{
+				url: '/og-image.png',
+				width: 1200,
+				height: 630,
+				alt: 'Blog Kit - Build Your Own Blog',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Blog Kit - Build Your Own Blog with Markdown & TypeScript',
+		description:
+			'Create your own blog in minutes. Modern toolkit for building beautiful markdown-based blogs with zero configuration.',
+		images: ['/og-image.png'],
+		creator: '@haroonwaves',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+	icons: {
+		icon: '/favicon.ico',
+		shortcut: '/favicon.ico',
+		apple: '/apple-touch-icon.png',
+	},
+	manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({

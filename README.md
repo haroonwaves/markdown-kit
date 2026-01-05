@@ -5,8 +5,7 @@ for parsing markdown blog files and a React component library for rendering blog
 
 ## Documentation
 
-[blog-kit.pages.dev](https://blog-kit.pages.dev) - A full documentation of Blog Kit built with Blog
-Kit.
+[blog kit](https://blog-kit.haroonwaves.com) - A full documentation of Blog Kit built with Blog Kit.
 
 ## Development
 

@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-description: Get started with Blog Kit in minutes
+description: Build your own blog in minutes with this step-by-step guide. Learn how to set up Blog Kit with Next.js and start creating your markdown blog today.
 date: 2024-01-03
 ---
 

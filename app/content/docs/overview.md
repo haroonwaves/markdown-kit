@@ -1,14 +1,20 @@
 ---
 title: Overview
-description: A powerful toolkit for building blog systems with markdown
+description:
+  A powerful, free toolkit for creating markdown-based blogs. Perfect for developers who want full
+  control over their blog.
 date: 2024-01-01
 ---
 
-## Blog Kit
+## Build Your Own Blog with Blog Kit
 
-Blog Kit is a modern, TypeScript-first toolkit designed to simplify building blog systems with
-markdown. Whether you're creating a personal blog, documentation site, or content platform, Blog Kit
-provides the essential tools you need with minimal configuration.
+Blog Kit is a modern, TypeScript-first toolkit designed to help you **build your own blog** with
+markdown in minutes. Whether you're creating a personal blog, documentation site, or content
+platform, Blog Kit provides all the essential tools you need to build a professional blog with
+minimal configuration.
+
+**Perfect for developers, writers, and content creators** who want full control over their blog
+without the complexity of traditional CMS platforms.
 
 ### Key Features
 

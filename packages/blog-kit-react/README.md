@@ -18,13 +18,13 @@ yarn add @haroonwaves/blog-kit-react
 ## Documentation
 
 For complete documentation, API reference, and examples, please visit the
-[main documentation](https://blog-kit.pages.dev).
+[main documentation](https://blog-kit.haroonwaves.com).
 
 ## Quick Links
 
-- [Quick Start](https://blog-kit.pages.dev/docs/quick-start)
-- [React Package Usage](https://blog-kit.pages.dev/docs/react-package)
-- [API Reference](https://blog-kit.pages.dev/docs/api-reference)
+- [Quick Start](https://blog-kit.haroonwaves.com/docs/quick-start)
+- [React Package Usage](https://blog-kit.haroonwaves.com/docs/react-package)
+- [API Reference](https://blog-kit.haroonwaves.com/docs/api-reference)
 
 ## Related Packages
 
