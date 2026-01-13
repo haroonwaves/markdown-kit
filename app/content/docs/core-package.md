@@ -55,7 +55,9 @@ Your markdown files should include frontmatter:
 title: My Blog Post
 description: A brief description of the post
 date: 2024-01-15
-category: Technology
+categories:
+  - Technology
+  - Web Development
 ---
 
 # My Blog Post
@@ -71,7 +73,7 @@ Your markdown content here...
 
 **Optional frontmatter fields:**
 
-- `category` (string): Category/tag for the post
+- `categories` (string[]): Array of categories/tags for the post
 
 The parser automatically extracts this frontmatter and calculates reading time based on the content
 length.

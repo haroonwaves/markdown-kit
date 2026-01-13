@@ -48,11 +48,11 @@ importers:
   app:
     dependencies:
       '@haroonwaves/blog-kit-core':
-        specifier: ^1.1.2
-        version: 1.1.2
+        specifier: ^1.2.4
+        version: 1.2.4
       '@haroonwaves/blog-kit-react':
-        specifier: ^1.1.2
-        version: 1.1.2(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: ^1.2.4
+        version: 1.2.4(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@radix-ui/react-slot':
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.7)(react@19.2.1)
@@ -324,11 +324,11 @@ packages:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@haroonwaves/blog-kit-core@1.1.2':
-    resolution: {integrity: sha512-zyYbjPi7o8UunUjKdDbEjELHawHE4iOw1K2MAlW2CiwxVLxtrhTZSAgG8UgmyH5VXYfWuM1o0arxpUxYzH9QAg==}
+  '@haroonwaves/blog-kit-core@1.2.4':
+    resolution: {integrity: sha512-Vb83maa2QprwoWJTpc5BF2ScN/M7dPDD/VRS+8eH76z6k95tbiYXMkD6xO9g5VfhygKlkMGv/r2jDCKJaH4bjA==}
 
-  '@haroonwaves/blog-kit-react@1.1.2':
-    resolution: {integrity: sha512-L29FTRPBBK/HpPoXQhyPTHdEDVpIa1L9WmMKWrIsWSnpSt1xnc/Zc4tAi/DHTFrYZkpVpIBV+1I4mImaZBmZPA==}
+  '@haroonwaves/blog-kit-react@1.2.4':
+    resolution: {integrity: sha512-l3sVWDJEANrxitNwlEVZZRtBnpSnNdQOuytNm6ackC57BSLQGLqCuUg58HksZl/f+awznCNjbLAHvBFFjXdXUw==}
     peerDependencies:
       react: '>=19'
       react-dom: '>=19'
@@ -2856,12 +2856,12 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@haroonwaves/blog-kit-core@1.1.2':
+  '@haroonwaves/blog-kit-core@1.2.4':
     dependencies:
       gray-matter: 4.0.3
       reading-time: 1.5.0
 
-  '@haroonwaves/blog-kit-react@1.1.2(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@haroonwaves/blog-kit-react@1.2.4(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       prismjs: 1.30.0
       react: 19.2.1
@@ -2869,6 +2869,7 @@ snapshots:
       react-markdown: 10.1.0(@types/react@19.2.7)(react@19.2.1)
       rehype-prism-plus: 2.0.1
       rehype-raw: 7.0.0
+      rehype-slug-custom-id: 2.0.0
       remark-gfm: 4.0.1
     transitivePeerDependencies:
       - '@types/react'

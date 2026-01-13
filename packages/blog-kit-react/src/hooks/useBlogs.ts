@@ -6,6 +6,10 @@ export function useBlogs(blogsMeta: BlogMeta[]) {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
+	const getBlogCategories = (blog: BlogMeta): string[] => {
+		return blog.categories ?? [];
+	};
+
 	useEffect(() => {
 		let filtered = blogsMeta;
 
@@ -18,15 +22,16 @@ export function useBlogs(blogsMeta: BlogMeta[]) {
 		}
 
 		if (selectedCategory) {
-			filtered = filtered.filter((blog) => blog.category === selectedCategory);
+			filtered = filtered.filter((blog) => {
+				const blogCategories = getBlogCategories(blog);
+				return blogCategories.includes(selectedCategory);
+			});
 		}
 
 		setFilteredBlogs(filtered);
 	}, [blogsMeta, searchTerm, selectedCategory]);
 
-	const categories = Array.from(
-		new Set(blogsMeta.map((blog) => blog.category).filter(Boolean))
-	) as string[];
+	const categories = Array.from(new Set(blogsMeta.flatMap((blog) => getBlogCategories(blog))));
 
 	return {
 		metadata: filteredBlogs,

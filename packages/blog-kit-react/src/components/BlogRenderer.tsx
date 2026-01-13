@@ -188,16 +188,22 @@ export function BlogRenderer({
 		<>
 			{(showCategory || showReadingTime || showDate) && (
 				<div className="flex items-center gap-3 mb-4">
-					{showCategory && metadata.category && <Badge>{metadata.category}</Badge>}
+					{showCategory && metadata.categories?.length ? (
+						<div className="flex items-center gap-1.5 flex-wrap">
+							{metadata.categories.map((cat) => (
+								<Badge key={cat}>{cat}</Badge>
+							))}
+						</div>
+					) : null}
 					{(showReadingTime || showDate) && (
-						<div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+						<div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
 							{showReadingTime && <span>{metadata.readingTime}</span>}
 							{showReadingTime && showDate && <span>•</span>}
 							{showDate && (
 								<time dateTime={metadata.date}>
 									{new Date(metadata.date).toLocaleDateString('en-US', {
 										year: 'numeric',
-										month: 'long',
+										month: 'short',
 										day: 'numeric',
 									})}
 								</time>

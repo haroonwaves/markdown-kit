@@ -127,7 +127,7 @@ interface BlogMeta {
 	title: string;
 	description: string;
 	date: string;
-	category?: string;
+	categories?: string[];
 	slug: string;
 	readingTime: string;
 }
