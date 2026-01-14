@@ -65,7 +65,7 @@ export function BlogCard({
 				</h2>
 			)}
 
-			<p className="text-sm text-gray-500 dark:text-gray-300 leading-6 line-clamp-2">
+			<p className="text-sm text-gray-500 dark:text-gray-300 mb-2 leading-6 line-clamp-2">
 				{metadata.description}
 			</p>
 
